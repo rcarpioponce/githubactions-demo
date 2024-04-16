@@ -1,7 +1,7 @@
 // index.test.js
 
 const request = require('supertest');
-const { app, cerrarServidor } = require('../src/app'); // Importa tu aplicación Express
+const { app, cerrarServidor } = require('../src'); // Importa tu aplicación Express
 
 describe('Pruebas para la ruta raíz', () => {
     it('Debería devolver "¡Hola, mundo!"', async () => {

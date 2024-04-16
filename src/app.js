@@ -6,8 +6,11 @@ app.get('/', (req, res) => {
     res.send('¡Hola, mundo!');
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`El servidor está corriendo en el puerto ${port}`);
 });
 
-module.exports = app;
+const cerrarServidor = () => {
+    server.close();
+};
+module.exports = {app, cerrarServidor};

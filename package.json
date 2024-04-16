@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
     "supertest": "^6.3.4"
   },
   "dependencies": {

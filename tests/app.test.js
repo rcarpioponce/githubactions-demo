@@ -1,5 +1,10 @@
-const sum = require('../app');
+const request = require('supertest');
+const app = require('../src/app.js');
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+describe('GET /', () => {
+    it('responde con "¡Hola, mundo!"', async () => {
+        const response = await request(app).get('/');
+        expect(response.text).toBe('¡Hola, mundo!');
+        expect(response.status).toBe(200);
+    });
 });

@@ -26,4 +26,10 @@ jobs:
 
     - name: Deploy to Vercel
       if: success()
-      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+      run: |
+        sudo apt-get install curl -y
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        nvm install 14
+        npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
